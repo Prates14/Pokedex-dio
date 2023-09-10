@@ -1,3 +1,4 @@
+/* reset css */
 * {
     margin: 0;
     padding: 0;
@@ -9,6 +10,7 @@ body {
     background-color: #f6f8fc;
 }
 
+/* cores dos pokemons pelo tipo */
 .normal {
     background-color: #a6a877;
 }
@@ -81,6 +83,7 @@ body {
     background-color: #f9aec7;
 }
 
+/* estilização mobile */
 .content {
     padding: 1rem;
     background-color: #fff;

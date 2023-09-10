@@ -4,7 +4,7 @@ const limit = 10
 let offset = 0
 const maxRecords = 151
 
-
+// Carregamento da lista de pokemons
 function loadPokemonItens(offset, limit) {
     pokeApi.getPokemons(offset, limit).then((pokemonList = []) => {
         const newHtml = pokemonList.map((pokemon) => `
@@ -31,6 +31,7 @@ function loadPokemonItens(offset, limit) {
 
 loadPokemonItens(offset, limit)
 
+// evento clique do botão para carregamento de mais itens da lista
 loadMoreButton.addEventListener('click', () => {
     offset += limit
     const qtdRecordNextPage = offset + limit
