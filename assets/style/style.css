@@ -226,15 +226,37 @@ button {
     background-color: #f6f8fc;
     height: 100vh;
     width: 100vw;
+    padding: 1rem;
     border-radius: 1.5rem;
     box-shadow: #00000079 20px -20px 90px 2px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-around;
 }
 
 .detail-target p {
     font-size: 1.5rem;
-    margin-top: 1.5rem;
+    margin: 1.5rem auto;
     color: #333;
     text-decoration: 1px solid #7774 underline;
+}
+
+.grid-status {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-bottom: 3rem;
+    
+}
+
+.grid-status h6 {
+    padding-top: 0.7rem;
+    padding-bottom: 0.3rem;
+    color: #777;
+}
+
+.grid-status div {
+    align-items: center;
+    gap: 3rem;
 }
