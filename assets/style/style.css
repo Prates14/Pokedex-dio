@@ -232,7 +232,7 @@ button {
     display: flex;
     flex-direction: column;
     align-items: start;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .detail-target p {
@@ -242,20 +242,21 @@ button {
     text-decoration: 1px solid #7774 underline;
 }
 
-.grid-status {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
+.status {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    align-items: baseline;
     margin-bottom: 3rem;
+    margin: 0 auto;
 }
 
-.grid-status h6 {
-    padding-top: 1rem;
-    padding-bottom: 0.3rem;
+.status h6 {
+    text-align: end;
+    padding-bottom: 1.7rem;
     color: #777;
 }
 
-.grid-status div {
+.status div {
     display: flex;
     align-items: center;
     gap: 0.5rem;
