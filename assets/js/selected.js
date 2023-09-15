@@ -2,7 +2,7 @@ const pokeID = window.location.search.split('=')[1];
 const targetPokemon = document.querySelector('.content-target')
 
 async function getDetail() {
-    const url = `https://pokeapi.co/api/v2/pokemon/${pokeID}/`
+    const url = `https://pokeapi.co/api/v2/pokemon/${pokeID}`
     return fetch(url)
     .then((response) => response.json())
     .then((jsonBody) => jsonBody.results)
@@ -61,3 +61,5 @@ async function newInfo() {
         </article>
         `
 }
+
+newInfo()
