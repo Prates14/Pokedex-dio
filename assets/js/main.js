@@ -1,5 +1,6 @@
 const listPoke = document.getElementById('pokemons-list')
 const loadMoreButton = document.getElementById('loadMoreButton')
+const targetPokemon = document.querySelector('.content-target')
 const limit = 10
 let offset = 0
 const maxRecords = 151
@@ -25,8 +26,6 @@ function loadPokemonItens(offset, limit) {
 
         listPoke.innerHTML += newHtml
     })
-        .catch((error) => console.error(error))
-
 }
 
 loadPokemonItens(offset, limit)
@@ -53,6 +52,4 @@ window.addEventListener('click', (e) => {
     if (target.parentElement.classList.contains('pokemon')) {
         window.location.href = 'info-pokemon.html'
     }
-
-
 })
