@@ -1,6 +1,5 @@
 const listPoke = document.getElementById('pokemons-list')
 const loadMoreButton = document.getElementById('loadMoreButton')
-const targetPokemon = document.querySelector('.content-target')
 const limit = 10
 let offset = 0
 const maxRecords = 151
@@ -9,7 +8,7 @@ const maxRecords = 151
 function loadPokemonItens(offset, limit) {
     pokeApi.getPokemons(offset, limit).then((pokemonList = []) => {
         const newHtml = pokemonList.map((pokemon) => `
-            <li class="pokemon ${pokemon.type}">
+            <li class="pokemon ${pokemon.type}" onlick=redirectToDetail(${pokemon.number})>
                 <span class="number">#00${pokemon.num}</span>
                 <span class="name">${pokemon.name}</span>
 
@@ -49,7 +48,12 @@ window.addEventListener('click', (e) => {
         }
     }
 
-    if (target.parentElement.classList.contains('pokemon')) {
+    if(target.parentElement.tagName == 'LI' || target.tagName === 'LI' || target.tagName == 'IMG') {
         window.location.href = 'info-pokemon.html'
     }
+
 })
+
+function redirectToPokemonDetail(pokemon) {
+    window.location.href = `./info-pokemon.html?pokemon=${pokemon}`
+}
