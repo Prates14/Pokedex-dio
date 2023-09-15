@@ -8,7 +8,7 @@ const maxRecords = 151
 function loadPokemonItens(offset, limit) {
     pokeApi.getPokemons(offset, limit).then((pokemonList = []) => {
         const newHtml = pokemonList.map((pokemon) => `
-            <li class="pokemon ${pokemon.type}" onlick=redirectToDetail(${pokemon.number})>
+            <li class="pokemon ${pokemon.type}" onlick="redirectToDetail(${pokemon.num})">
                 <span class="number">#00${pokemon.num}</span>
                 <span class="name">${pokemon.name}</span>
 
@@ -29,7 +29,7 @@ function loadPokemonItens(offset, limit) {
 
 loadPokemonItens(offset, limit)
 
-// evento clique do botão para carregamento de mais itens da lista
+// evento clique para carregamento da página
 window.addEventListener('click', (e) => {
     const target = e.target
 
@@ -49,7 +49,7 @@ window.addEventListener('click', (e) => {
     }
 
     if(target.parentElement.tagName == 'LI' || target.tagName === 'LI' || target.tagName == 'IMG') {
-        window.location.href = 'info-pokemon.html'
+        window.location.href = './info-pokemon.html'
     }
 
 })

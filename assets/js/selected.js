@@ -3,14 +3,16 @@ const targetPokemon = document.querySelector('.content-target')
 
 async function getDetail() {
     const url = `https://pokeapi.co/api/v2/pokemon/${pokeID}/`
-    const response = await fetch(url)
-    const data = await response.json()
-    return data
+    return fetch(url)
+    .then((response) => response.json())
+    .then((jsonBody) => jsonBody.results)
+    .then((pokemonDetails) => pokemonDetails)
+    .catch((error) => console.error(error))
 }
 
 async function newInfo() {
     const pokemonInfo = await getDetail()
-    const newInfo = `
+    targetPokemon.innerHTML = `
         <div class="ordem">
             <span class="nome">${pokemonInfo.name}</span>
             <span class="numero">${pokemonInfo.num}</span>
@@ -58,6 +60,4 @@ async function newInfo() {
             </div>
         </article>
         `
-
-        targetPokemon.innerHTML = newInfo
 }
