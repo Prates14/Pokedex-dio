@@ -246,8 +246,8 @@ button {
     display: grid;
     grid-template-columns: 1fr 5fr;
     align-items: baseline;
-    margin-bottom: 3rem;
-    margin: 0 auto;
+    justify-items: flex-end;
+    margin: 0 1rem;
 }
 
 .status h6 {
@@ -267,10 +267,10 @@ button {
     width: 200px;
     height: 3px;
     background-color: #ccc;
+    display: flex;
 }
 
 .barrinha span {
     height: 3px;
-    width: 70px;
-    background-color: #ffcc00;
+    background-color: #00ff559a;
 }
