@@ -47,11 +47,6 @@ window.addEventListener('click', (e) => {
 
         }
     }
-
-    // if(target.parentElement.tagName == 'LI' || target.tagName === 'LI' || target.tagName == 'IMG') {
-    //     window.location.href = './info-pokemon.html'
-    // }
-
 })
 
 function redirectToDetail(pokemon) {
